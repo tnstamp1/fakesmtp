@@ -5,7 +5,7 @@ Is a wrapper around the FakeSMTP java app running on alpine linux with openjdk 8
 This will start an instance that puts the emails in `/tmp/fakemail` and listens on port `1025`
 
 ```bash
-docker run -d --name fakesmtp -p 1025:25 -v /tmp/fakemail:/var/mail digiplant/fake-smtp
+docker run -d --name fakesmtp -p 1025:25 -v /tmp/fakemail:/var/mail tnstamp/fakesmtp:<version>
 ```
 
 ## Or use in your docker compose file:
@@ -16,7 +16,7 @@ version: "2"
 
 services:
   fakesmtp:
-    image: digiplant/fake-smtp
+    image: tnstamp/fakesmtp:<version>
     ports:
       - "1025:25"
 
@@ -24,4 +24,4 @@ services:
       - ./email:/var/mail
 ```
 
-Thanks to digiplant...
+Thanks to digiplant for this version...
